@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080a0f">
+<title>Herner Eisdisco – Offizielle Seite | HEV Wunschbox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="siteHeader">
+  <a class="logo" href="#home" aria-label="DJ BREEZE Startseite"><span class="spark">✦</span><span>DJ</span><b>BREEZE</b></a>
+  <div class="official">HERNE EISDISCO · OFFIZIELLE SEITE</div>
+  <nav class="mainNav" aria-label="Hauptnavigation">
+    <button data-section="songs">SONGS</button>
+    <button data-section="birthday">BIRTHDAY</button>
+    <button data-section="credits">CREDITS</button>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero section" id="hero">
+  <div class="heroInner">
+    <p class="eyebrow">HEV WUNSCHBOX</p>
+    <h1>TURN UP<br>THE <em>NIGHT.</em></h1>
+    <p class="tagline">DIE MUSIK. DER MOMENT. DAS ERLEBNIS.</p>
+    <button class="limeBtn" data-section="songs">EXPLORE ↓</button>
+  </div>
+  <div class="nowCard">
+    <span class="liveDot"></span><span class="nowLabel">NOW PLAYING</span>
+    <strong id="homeNow">Gerade läuft keine Musik</strong>
+    <small id="homeNowArtist">DJ BREEZE ist bereit</small><div class="progressTrack"><span id="homeProgress"></span></div>
+  </div>
+</section>
+
+<section class="recordSection section" aria-label="Plattenspieler">
+  <div class="turntable">
+    <div class="record" id="record"><div class="recordLabel" id="recordLabel"><img id="recordAlbumArt" class="recordAlbumArt" alt="Albumcover des aktuell laufenden Songs" hidden><a id="recordSpotifyLink" class="spotifyAttribution" href="https://open.spotify.com" target="_blank" rel="noopener">Spotify</a><div id="recordFallback" class="recordFallback"><span>✦</span><b>HEV</b><small>WUNSCHBOX</small></div></div></div>
+    <div class="tonearm" id="tonearm" aria-label="Tonarm"><div class="pivot"></div><div class="arm"></div><div class="headshell"></div></div>
+  </div>
+</section>
+
+<section class="contentSection section" id="songs">
+  <p class="eyebrow">01 — SONGS</p>
+  <h2>YOUR<br><em>WISH.</em></h2>
+  <p class="lead">Wünsch dir deinen Song und schick ihn direkt in die Warteschlange.</p>
+  <div class="requestCard">
+    <form id="searchForm">
+      <div class="fields"><label>SONGTITEL<input id="title" maxlength="100" required placeholder="z. B. Blinding Lights"></label><label>INTERPRET<input id="artist" maxlength="100" required placeholder="z. B. The Weeknd"></label></div>
+      <button class="limeBtn full" type="submit">SONG SUCHEN ↗</button>
+    </form>
+    <div id="results"></div><p id="msg" class="message"></p>
+  </div>
+  <div class="queueHead"><div><p class="eyebrow">LIVE QUEUE</p><h3>Warteschlange</h3></div><button id="refreshQueue" class="roundBtn" type="button">↻</button></div>
+  <div id="publicWishes" class="publicQueue"><p class="muted">Warteschlange wird geladen…</p></div><div class="queueHead recentHead"><div><p class="eyebrow">RECENTLY PLAYED</p><h3>Zuletzt gespielt</h3></div></div><div id="recentPlayed" class="publicQueue"><p class="muted">Noch keine Songs gespielt.</p></div>
+</section>
+
+<section class="contentSection birthday section" id="birthday">
+  <p class="eyebrow">02 — BIRTHDAY ROOM</p>
+  <h2>IT'S YOUR<br><em>NIGHT.</em></h2>
+  <p class="lead">Starte einen besonderen Birthday-Moment.</p>
+  <div class="birthdayCard">
+    <label>NAME DES GEBURTSTAGSKINDES<input id="birthdayRoomName" maxlength="80" placeholder="Name eingeben"></label>
+    <button id="startBirthdayRoom" class="limeBtn full">CELEBRATION STARTEN ✦</button>
+    <p id="birthdayRoomMsg" class="message"></p>
+  </div>
+</section>
+
+<section class="contentSection credits section" id="credits">
+  <p class="eyebrow">03 — CREDITS</p>
+  <h2>BUILT WITH<br><em>PASSION.</em></h2>
+  <div class="creditCard">
+    <span class="smallCaps">WEBSITE CODE · DESIGN · CONCEPT</span>
+    <h3>DJ BREEZE</h3>
+    <p>HEV WUNSCHBOX</p>
+    <div class="creditLine"></div>
+    <button id="detailsBtn" class="textBtn" type="button">DETAILS ZUR WEBSITE / IMPRESSUM ↗</button>
+  </div>
+</section>
+
+<div class="controlLink"><button id="controlRoomBtn" class="textBtn" type="button">CONTROL ROOM ↗</button></div>
+</main>
+
+<footer><span>DJ BREEZE ✦ — THE SOUND NEVER STOPS.</span></footer>
+
+<!-- Details room -->
+<div id="detailsModal" class="modal" hidden>
+  <div class="modalCard">
+    <button class="closeBtn" data-close="detailsModal">×</button>
+    <p class="eyebrow">WEBSITE DETAILS</p><h3>Details zur Website / Impressum</h3>
+    <p>Diese Website wurde bereitgestellt, designt und gecodet von <strong>Maksim aka DJ BREEZE.</strong></p>
+  </div>
+</div>
+
+<!-- DJ login -->
+<div id="loginModal" class="modal" hidden>
+  <div class="modalCard loginCard">
+    <button class="closeBtn" data-close="loginModal">×</button>
+    <p class="eyebrow">DJ ONLY · RESTRICTED ACCESS</p><h3>CONTROL ROOM</h3>
+    <p>Gib dein DJ-Passwort ein.</p>
+    <input id="djPassword" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Passwort">
+    <button id="loginBtn" class="limeBtn full">CONTROL ROOM ÖFFNEN ↗</button>
+    <p id="loginMsg" class="message"></p>
+  </div>
+</div>
+
+<!-- Control room -->
+<div id="controlModal" class="modal" hidden>
+  <div class="modalCard controlCard">
+    <button class="closeBtn" data-close="controlModal">×</button>
+    <div class="controlTop"><div><p class="eyebrow">DJ CONTROL ROOM</p><h3>QUEUE CONTROL</h3></div><button id="logoutBtn" class="textBtn">LOGOUT</button></div>
+    <div class="nowControl"><div><span class="nowLabel">NOW PLAYING</span><strong id="controlNowPlaying">Gerade läuft keine Musik</strong><small id="controlNowArtist">—</small></div><div><button id="startQueueBtn" class="limeBtn">WUNSCHLISTE STARTEN ▶</button><label class="tiny" style="display:block;margin-top:8px"><input id="autoDjToggle" type="checkbox" checked> AUTO-DJ</label></div></div>
+    <div class="spotifyPanel"><div><span class="eyebrow">SPOTIFY</span><strong id="spotifyStatus">Nicht verbunden</strong><small id="spotifyDevice">Browser-Player wartet</small><div class="progressTrack controlProgress"><span id="controlProgress"></span></div></div><div class="spotifyActions"><button id="spotifyConnectBtn" class="limeBtn" type="button">SPOTIFY VERBINDEN ↗</button><button id="activateSpotifyPlayer" class="limeBtn" type="button">SPOTIFY PLAYER STARTEN ▶</button><button id="pauseSpotify" class="roundBtn" type="button">Ⅱ</button><button id="nextSpotify" class="roundBtn" type="button">▶▶</button><button id="stopSpotify" class="roundBtn" type="button">■</button><button id="fullscreenControl" class="roundBtn" type="button">⛶</button></div></div>
+    <audio id="browserAudio" controls preload="none"></audio>
+    <div class="controlQueueHead"><div><p class="eyebrow">LIVE QUEUE</p><h4>Wünsche verwalten</h4></div><button id="refreshControlQueue" class="roundBtn">↻</button></div>
+    <div id="controlQueueList" class="controlQueue"><p class="muted">Noch keine Wünsche.</p></div><div class="djStats" id="djStats"></div><div class="soundBox"><p class="eyebrow">EVENT SOUNDS</p><div class="soundButtons"><button data-sound="/sounds/crowd-hype.wav">CROWD HYPE</button><button data-sound="/sounds/riser.wav">RISER</button><button data-sound="/sounds/bass-drop.wav">BASS DROP</button><button data-sound="/sounds/party-horn.wav">PARTY HORN</button></div></div>
+    <div class="banBox"><p class="eyebrow">SONG SPERREN</p><div class="fields"><input id="banTitle" placeholder="Songtitel"><input id="banArtist" placeholder="Interpret (optional)"></div><button id="banBtn" class="textBtn">SONG KOMPLETT VERBIETEN ↗</button></div>
+    <p class="tiny">Spotify spielt im Browser dieses Control Rooms. Dafür muss der DJ sein Spotify-Premium-Konto einmal verbinden. Besucher brauchen kein Spotify-Premium, weil sie nur Wünsche senden.</p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
